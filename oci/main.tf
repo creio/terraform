@@ -69,13 +69,17 @@ resource "oci_core_instance" "free_instance0" {
     source      = "./scripts/install.sh"
     destination = "/tmp/install.sh"
   }
-
   ## Run sh
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/install.sh",
       "/tmp/install.sh",
     ]
+  }
+  # copy files
+  provisioner "file" {
+    source      = "./configs/cpatracker"
+    destination = "~/apps"
   }
 }
 
