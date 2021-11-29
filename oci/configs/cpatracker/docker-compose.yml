@@ -8,7 +8,6 @@ services:
     env_file: .env
     volumes:
       - dbdata:/var/lib/mysql
-    command: '--default-authentication-plugin=mysql_native_password'
     networks:
       - app-network
 
