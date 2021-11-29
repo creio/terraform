@@ -32,7 +32,7 @@ Preview.
 terraform plan
 ```
 
-Deploy the image to a Droplets.
+Deploy.
 
 ```bash
 terraform apply
@@ -40,7 +40,7 @@ terraform apply
 terraform apply -auto-approve
 ```
 
-Destroy/del Droplets.
+Destroy/del.
 
 ```bash
 terraform destroy -auto-approve
