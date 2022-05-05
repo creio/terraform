@@ -10,8 +10,9 @@ sudo apt update
 sudo apt-cache policy docker-ce
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 
-dc_version=$(curl -s "https://github.com/docker/compose/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')
-sudo curl -L "https://github.com/docker/compose/releases/download/$dc_version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# dc_version=$(curl -s "https://github.com/docker/compose/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')
+# sudo curl -L "https://github.com/docker/compose/releases/download/$dc_version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -SL "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo systemctl enable docker
